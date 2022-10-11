@@ -1,58 +1,8 @@
 #include "mbed.h"
 #include "stm32746g_discovery_lcd.h"
 #include <string> 
-
+#include "morse.h"
 using namespace std;
-
-DigitalOut myled(LED1);
-
-void carka()
-{
-    myled = 1;
-    wait(0.6);
-    myled = 0;
-    wait(0.1);
-}
-
-void tecka()
-{
-    myled = 1;
-    wait(0.2);
-    myled = 0;
-    wait(0.1);
-}
-
-void pauza()
-{
-    wait(1.0);
-}
-
-void decoder(string morse, int n)
-{
-    int znak = 0;
-    
-    for (int i = 0; i < n; i++) {
-        if (morse[i] == '.') {
-            znak = 1;
-        } else if (morse[i] == '-') {
-            znak = 2;
-        } else {
-            znak = 3;
-        }
-        
-        switch(znak) {
-            case 1:
-                tecka();
-                break;
-            case 2:
-                carka();
-                break;
-            default:
-                pauza();
-                break;
-        }
-    }
-}
 
 int main()
 {
@@ -69,7 +19,8 @@ int main()
 
     string morse ="-.. . ...- .. -. / -.- .- -. . -.- / .... .- - . .--- / -- .- -- .--. .-..";
     int n = morse.length();
+    
     while(1) {
-        decoder(morse, n);
+        Morse::blink(morse, n);
     }
 }

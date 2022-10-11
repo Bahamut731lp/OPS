@@ -394,6 +394,25 @@ void BSP_CAMERA_ColorEffectConfig(uint32_t Effect)
   }  
 }
 
+
+/**
+  * @brief  Handles DCMI interrupt request.
+  * @retval None
+  */
+void BSP_CAMERA_IRQHandler(void) 
+{
+  HAL_DCMI_IRQHandler(&hDcmiHandler);
+}
+
+/**
+  * @brief  Handles DMA interrupt request.
+  * @retval None
+  */
+void BSP_CAMERA_DMA_IRQHandler(void) 
+{
+  HAL_DMA_IRQHandler(hDcmiHandler.DMA_Handle);
+}
+
 /**
   * @brief  Get the capture size in pixels unit.
   * @param  resolution: the current resolution.
