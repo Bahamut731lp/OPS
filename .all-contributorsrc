@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "Bahamut731lp",
+      "name": "Kevin Daněk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/27443880?v=4",
+      "profile": "http://bahamut731lp.github.io",
+      "contributions": [
+        "code",
+        "design",
+        "infra"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "OPS",
+  "projectOwner": "Bahamut731lp"
+}
